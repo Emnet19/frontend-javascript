@@ -1,60 +1,36 @@
+// main.ts
 
+// Define the Teacher interface
+interface Teacher {
+  readonly firstName: string; // only modifiable on initialization
+  readonly lastName: string;  // only modifiable on initialization
+  fullTimeEmployee: boolean;  // always defined
+  yearsOfExperience?: number; // optional
+  location: string;           // always defined
 
-
-
-interface TeacherProps {
-  firstName: string;
-  lastName: string;
-  fullTimeEmployee: boolean;
-  yearsOfExperience?: number;
-  location: string;
-  [key: string]: any; // allows adding extra properties like contract
-}
-
-class Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
-  fullTimeEmployee: boolean;
-  yearsOfExperience?: number;
-  location: string;
+  // allows adding extra properties of any type
   [key: string]: any;
-
-  constructor({ firstName, lastName, fullTimeEmployee, location, yearsOfExperience, ...extraProps }: TeacherProps) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.fullTimeEmployee = fullTimeEmployee;
-    this.location = location;
-    this.yearsOfExperience = yearsOfExperience!;
-
-    // assign any extra dynamic properties
-    Object.assign(this, extraProps);
-  }
 }
 
-// Directors interface extends TeacherProps
-interface Directors extends TeacherProps {
-  numberOfReports: number;
-}
-
-// Example usage of Teacher
-const teacher1 = new Teacher({
+// Create a Teacher object
+const teacher1: Teacher = {
   firstName: "Alice",
-  lastName: "Johnson",
+  lastName: "Smith",
   fullTimeEmployee: true,
-  location: "New York",
-  yearsOfExperience: 5,
-  contract: true // extra property
-});
-
-console.log(teacher1);
-
-// Example usage of Directors
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
+  location: "Addis Ababa",
+  yearsOfExperience: 3,
+  contract: true,  // extra attribute
+  subject: "Mathematics" // another extra attribute
 };
 
-console.log(director1);
+// Trying to modify firstName or lastName will cause an error
+// teacher1.firstName = "Bob"; // ❌ Error: Cannot assign to 'firstName' because it is a read-only property
+
+// Modify allowed properties
+teacher1.fullTimeEmployee = false;
+teacher1.location = "Bahir Dar";
+
+// Add more extra attributes dynamically
+teacher1.email = "alice.smith@example.com";
+
+console.log(teacher1);
