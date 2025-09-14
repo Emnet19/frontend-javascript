@@ -34,64 +34,64 @@ teacher1.email = "alice.smith@example.com";
 console.log(teacher1);
 
 
-// // Directors interface extending Teacher
-// interface Directors extends Teacher {
-//   numberOfReports: number; // required attribute
-// }
+// Directors interface extending Teacher
+interface Directors extends Teacher {
+  numberOfReports: number; // required attribute
+}
 
-// // Example usage
-// const director1: Directors = {
-//   firstName: "John",
-//   lastName: "Doe",
-//   fullTimeEmployee: true,
-//   location: "Addis Ababa",
-//   numberOfReports: 10,  // required
-//   department: "Engineering" // extra attribute
-// };
+// Example usage
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  fullTimeEmployee: true,
+  location: "Addis Ababa",
+  numberOfReports: 10,  // required
+  department: "Engineering" // extra attribute
+};
 
-// console.log(director1);
-
-
-// interface PrintTeacherFunction {
-//   (firstName: string, lastName: string): string;
-// }
-
-// const printTeacher: PrintTeacherFunction = (firstName, lastName) => {
-//   return `${firstName.charAt(0)}. ${lastName}`;
-// };
-
-// // Example usage
-// console.log(printTeacher("John", "Doe")); // Output: J. Doe
-// console.log(printTeacher("Alice", "Smith")); // Output: A. Smith
+console.log(director1);
 
 
-// interface StudentConstructor {
-//   firstName: string;
-//   lastName: string;
-// }
+interface PrintTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
 
-// // Interface describing the class methods
-// interface StudentInterface {
-//   workOnHomework(): string;
-//   displayName(): string;
-// }
+const printTeacher: PrintTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+// Example usage
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
+console.log(printTeacher("Alice", "Smith")); // Output: A. Smith
 
 
-// class StudentClass implements StudentInterface {
-//   firstName: string;
-//   lastName: string;
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
 
-//   constructor({ firstName, lastName }: StudentConstructor) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//   }
+// Interface describing the class methods
+interface StudentInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
 
-//   workOnHomework(): string {
-//     return "Currently working";
-//   }
 
-//   displayName(): string {
-//     return this.firstName;
-//   }
-// }
+class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor({ firstName, lastName }: StudentConstructor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
 
