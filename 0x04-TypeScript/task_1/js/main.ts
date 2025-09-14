@@ -1,43 +1,4 @@
-// interface TeacherProps {
-//   firstName: string;
-//   lastName: string;
-//   fullTimeEmployee: boolean;
-//   yearsOfExperience?: number;
-//   location: string;
-//   [key: string]: any; // allows adding extra properties like contract
-// }
 
-// class Teacher {
-//   readonly firstName: string;
-//   readonly lastName: string;
-//   fullTimeEmployee: boolean;
-//   yearsOfExperience?: number;
-//   location: string;
-//   [key: string]: any;
-
-//   constructor({ firstName, lastName, fullTimeEmployee, location, yearsOfExperience, ...extraProps }: TeacherProps) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.fullTimeEmployee = fullTimeEmployee;
-//     this.location = location;
-//     this.yearsOfExperience = yearsOfExperience!;
-
-//     // assign any extra dynamic properties
-//     Object.assign(this, extraProps);
-//   }
-// }
-
-// // Example usage
-// const teacher1 = new Teacher({
-//   firstName: "Alice",
-//   lastName: "Johnson",
-//   fullTimeEmployee: true,
-//   location: "New York",
-//   yearsOfExperience: 5,
-//   contract: true // extra property
-// });
-
-// console.log(teacher1);
 
 
 
