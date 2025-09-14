@@ -1,7 +1,5 @@
 
-// main.ts
 
-// Define the Teacher interface
 interface Teacher {
   readonly firstName: string; // only modifiable on initialization
   readonly lastName: string;  // only modifiable on initialization
@@ -9,7 +7,7 @@ interface Teacher {
   yearsOfExperience?: number; // optional
   location: string;           // always defined
 
-  // allows adding extra properties of any type
+ 
   [key: string]: any;
 }
 
@@ -24,8 +22,7 @@ const teacher1: Teacher = {
   subject: "Mathematics" // another extra attribute
 };
 
-// Trying to modify firstName or lastName will cause an error
-// teacher1.firstName = "Bob"; // ❌ Error: Cannot assign to 'firstName' because it is a read-only property
+
 
 // Modify allowed properties
 teacher1.fullTimeEmployee = false;
@@ -38,65 +35,4 @@ console.log(teacher1);
 
 
 
-
-// Directors interface extending Teacher
-interface Directors extends Teacher {
-  numberOfReports: number; // required attribute
-}
-
-// Example usage
-const director1: Directors = {
-  firstName: "John",
-  lastName: "Doe",
-  fullTimeEmployee: true,
-  location: "Addis Ababa",
-  numberOfReports: 10,  // required
-  department: "Engineering" // extra attribute
-};
-
-console.log(director1);
-
-
-interface PrintTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
-const printTeacher: PrintTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
-
-// Example usage
-console.log(printTeacher("John", "Doe")); // Output: J. Doe
-console.log(printTeacher("Alice", "Smith")); // Output: A. Smith
-
-
-interface StudentConstructor {
-  firstName: string;
-  lastName: string;
-}
-
-// Interface describing the class methods
-interface StudentInterface {
-  workOnHomework(): string;
-  displayName(): string;
-}
-
-
-class StudentClass implements StudentInterface {
-  firstName: string;
-  lastName: string;
-
-  constructor({ firstName, lastName }: StudentConstructor) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  workOnHomework(): string {
-    return "Currently working";
-  }
-
-  displayName(): string {
-    return this.firstName;
-  }
-}
 
