@@ -1,3 +1,4 @@
+
 // main.ts
 
 // Define the Teacher interface
