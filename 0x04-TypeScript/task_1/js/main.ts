@@ -34,3 +34,23 @@ teacher1.location = "Bahir Dar";
 teacher1.email = "alice.smith@example.com";
 
 console.log(teacher1);
+
+
+
+
+// Directors interface extending Teacher
+interface Directors extends Teacher {
+  numberOfReports: number; // required attribute
+}
+
+// Example usage
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  fullTimeEmployee: true,
+  location: "Addis Ababa",
+  numberOfReports: 10,  // required
+  department: "Engineering" // extra attribute
+};
+
+console.log(director1);
