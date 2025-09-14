@@ -1,4 +1,5 @@
 
+
 interface Teacher {
   readonly firstName: string; // only modifiable on initialization
   readonly lastName: string;  // only modifiable on initialization
@@ -6,7 +7,7 @@ interface Teacher {
   yearsOfExperience?: number; // optional
   location: string;           // always defined
 
-  // allows adding extra properties of any type
+ 
   [key: string]: any;
 }
 
@@ -22,6 +23,7 @@ const teacher1: Teacher = {
 };
 
 
+
 // Modify allowed properties
 teacher1.fullTimeEmployee = false;
 teacher1.location = "Bahir Dar";
@@ -30,8 +32,6 @@ teacher1.location = "Bahir Dar";
 teacher1.email = "alice.smith@example.com";
 
 console.log(teacher1);
-
-
 
 
 // // Directors interface extending Teacher
