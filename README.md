@@ -1,6 +1,3 @@
-
-# frontend-javascript
-
 # ALX TypeScript Task 0 – Students Table
 
 ## Project Description
