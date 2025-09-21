@@ -1,5 +1,9 @@
 import { Teacher } from './Teacher';
 
-export interface Subject {
-  setTeacher(teacher: Teacher): void;
+export class Subject {
+  teacher!: Teacher;
+
+  setTeacher(teacher: Teacher) {
+    this.teacher = teacher;
+  }
 }
